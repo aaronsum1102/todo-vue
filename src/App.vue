@@ -1,17 +1,17 @@
 <template>
 <div>
-  <Container message="Todo"/>
+  <Header/>
 </div>
 
 </template>
 
 <script>
-import Container from './components/Container.vue'
+import Header from './components/organisms/Header.vue'
 
 export default {
   name: 'app',
   components: {
-    Container
+    Header
   }
 }
 </script>
