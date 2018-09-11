@@ -1,7 +1,7 @@
 <template>
     <div class="todo-item">
         <input class="status" type="checkbox">
-        <ToDoMessage class="details" :description="description" />
+        <ToDoMessage class="details" :message="description" />
     </div>
 </template>
 

@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faListUl, faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faListUl, faPlus, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faListUl, faPlus)
+library.add(faListUl, faPlus, faExclamationTriangle)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

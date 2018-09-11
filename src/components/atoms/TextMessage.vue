@@ -1,12 +1,12 @@
 <template>
-  <div> {{description}}</div>
+  <div> {{message}}</div>
 </template>
 
 <script>
 export default {
   name: 'TextMessage',
   props: {
-    description: {
+    message: {
       type: String,
       required: true
     }
