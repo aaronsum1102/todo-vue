@@ -1,12 +1,13 @@
 <template>
   <div class="title">
-    <span class="message">
-      {{messageOnLeft}} <font-awesome-icon id="icon" icon="list-ul" /> {{messageOnRight}}
-    </span>
+    <Message class="message" :description="messageOnLeft" />
+    <font-awesome-icon icon="list-ul" />
+    <Message class="message" :description="messageOnRight" />
   </div>
 </template>
 
 <script>
+import Message from '../atoms/TextMessage.vue'
 export default {
   name: 'Title',
   props: {
@@ -16,16 +17,21 @@ export default {
     messageOnRight: {
       type: String
     }
+  },
+  components: {
+    Message
   }
 }
 </script>
 
 <style scoped>
   .title {
-    display:flex;
+    display: flex;
     justify-content: center;
+    align-items: center;
   }
-    .title .message {
+
+  .title .message {
     padding: 5px;
   }
 </style>

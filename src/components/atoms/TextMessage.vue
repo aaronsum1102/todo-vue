@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'ToDoDescription',
+  name: 'TextMessage',
   props: {
     description: {
       type: String,

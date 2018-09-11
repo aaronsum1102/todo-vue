@@ -2,8 +2,8 @@
     <div class="input-form">
         <Input class="input" placeholder="write your new task here..." />
         <button class="button">
-            <font-awesome-icon id="icon" icon="plus"/> add
-        </button>
+                    <font-awesome-icon id="icon" icon="plus"/> add
+                </button>
     </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
         border: 2px solid;
         border-radius: 5px;
         flex: 1;
-        padding:5px;
+        padding: 5px;
         font-size: 2vh;
     }
 
