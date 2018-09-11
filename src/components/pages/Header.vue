@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <Title id="title" message-on-left="To" message-on-right="Do" />
+        <Title message-on-left="To" message-on-right="Do" />
     </div>
 </template>
 
@@ -20,6 +20,6 @@ export default {
         color: #FFFFFF;
         background-color: skyblue;
         padding: 5px;
-        text-align: center;
+        font-size: 5vh;
     }
 </style>

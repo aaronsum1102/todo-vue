@@ -1,19 +1,19 @@
 <template>
     <div class="app">
         <Header/>
-        <ToDoList/>
+        <Body/>
     </div>
 </template>
 
 <script>
-import Header from './components/organisms/Header.vue'
-import ToDoList from './components/organisms/ToDoList.vue'
+import Header from './components/pages/Header.vue'
+import Body from './components/pages/Body.vue'
 
 export default {
   name: 'app',
   components: {
     Header,
-    ToDoList
+    Body
   }
 }
 </script>

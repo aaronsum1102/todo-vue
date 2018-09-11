@@ -1,7 +1,7 @@
 <template>
     <div class="todo-item">
-        <input type="checkbox">
-        <ToDoDescription id="description" :description="description" />
+        <input class="status" type="checkbox">
+        <ToDoDescription class="description" :description="description" />
     </div>
 </template>
 
@@ -23,22 +23,21 @@ export default {
 </script>
 
 <style scoped>
-    input {
-        margin-left: 3%;
-        vertical-align: middle;
-    }
-    #description {
-        display: inline-block;
-        margin-left: 1%;
-        margin-right: 1%;
-    }
     .todo-item {
-        margin-left: 1%;
-        margin-right: 1%;
         margin-top: 2%;
+        margin-bottom: 2%;
         border: 2px solid;
         border-radius: 10px;
         border-color: skyblue;
         vertical-align: middle;
+        display: flex;
+    }
+    .todo-item .status {
+        margin-left: 3%;
+        align-self: center;
+    }
+    .todo-item .description {
+        padding: 1%;
+        flex: 1;;
     }
 </style>

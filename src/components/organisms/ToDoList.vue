@@ -1,11 +1,7 @@
 <template>
-    <div class="todo-list">
-        <ToDoItem
-          v-for="todo in todos"
-          v-bind:key="todo.id"
-          :todo="todo"
-          :description="todo.item" />
-    </div>
+  <div class="todo-list">
+    <ToDoItem class="item" v-for="todo in todos" v-bind:key="todo.id" :todo="todo" :description="todo.item" />
+  </div>
 </template>
 
 <script>
@@ -15,9 +11,12 @@ export default {
   name: 'ToDoList',
   data: function () {
     return {
-      todos: [
-        { item: 'working on css. Sytling is an art!' },
-        { item: 'working on vue' }
+      todos: [{
+        item: 'working on css. Sytling is an art!'
+      },
+      {
+        item: 'working on vue'
+      }
       ]
     }
   },
@@ -26,9 +25,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-  .todo-list{
-    font-size: 2vh;
-  }
-</style>
