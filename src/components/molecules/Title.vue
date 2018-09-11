@@ -1,13 +1,12 @@
 <template>
-    <div>
+    <div class="title">
         <span id="message">{{messageOnLeft}}</span>
-        <image-button/>
+        <font-awesome-icon id="icon" icon="list-ul"/>
         <span id="message">{{messageOnRight}}</span>
     </div>
 </template>
 
 <script>
-import ImageButton from '../atoms/ImageButton.vue'
 
 export default {
   name: 'Title',
@@ -18,17 +17,16 @@ export default {
     messageOnRight: {
       type: String
     }
-  },
-  components: {
-    ImageButton
   }
 }
 </script>
 
-<style>
+<style scoped>
     #message {
-        padding: 5px;
+        padding: 10px;
         align-items: center;
-        font-size: 5vh;
+    }
+    .title{
+      font-size: 2em;
     }
 </style>

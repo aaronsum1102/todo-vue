@@ -1,25 +1,25 @@
 <template>
-    <div id="app">
+    <div class="app">
         <Header/>
-        <Body id="body" />
+        <ToDoList/>
     </div>
 </template>
 
 <script>
 import Header from './components/organisms/Header.vue'
-import Body from './components/organisms/Body.vue'
+import ToDoList from './components/organisms/ToDoList.vue'
 
 export default {
   name: 'app',
   components: {
     Header,
-    Body
+    ToDoList
   }
 }
 </script>
 
 <style>
-    #app {
+    .app {
         font-family: Arial, Helvetica, sans-serif;
     }
 </style>

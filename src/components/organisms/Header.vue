@@ -1,5 +1,5 @@
 <template>
-    <div id="header">
+    <div class="header">
         <Title id="title" message-on-left="To" message-on-right="Do" />
     </div>
 </template>
@@ -15,8 +15,8 @@ export default {
 }
 </script>
 
-<style>
-    #header {
+<style scoped>
+    .header {
         color: #FFFFFF;
         background-color: skyblue;
         padding: 5px;
