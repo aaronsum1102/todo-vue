@@ -1,7 +1,7 @@
 <template>
     <div class="body">
-        <AlertMessage class="section-margin" id="alert" message="placeholder text..." />
-        <InputForm class="section-margin" id="input-form" />
+        <AlertMessage class="section-margin" v-if="indicator.toDisplay" message="placeholder text..." />
+        <InputForm class="section-margin" />
         <ToDoList class="section-margin" id="todo-list" />
     </div>
 </template>
@@ -13,6 +13,13 @@ import AlertMessage from '../molecules/AlertMessage.vue'
 
 export default {
   name: 'Body',
+  data: function () {
+    return {
+      indicator: {
+        toDisplay: true
+      }
+    }
+  },
   components: {
     ToDoList,
     InputForm,
