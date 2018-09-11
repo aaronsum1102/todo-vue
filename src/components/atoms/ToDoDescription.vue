@@ -1,5 +1,5 @@
 <template>
-    <h3>{{description}}</h3>
+    <p>{{description}}</p>
 </template>
 
 <script>
@@ -13,9 +13,3 @@ export default {
   }
 }
 </script>
-
-<style>
-h3 {
-  margin: 5%;
-}
-</style>

@@ -27,6 +27,6 @@ export default {
         align-items: center;
     }
     .title{
-      font-size: 2em;
+      font-size: 5vh;
     }
 </style>

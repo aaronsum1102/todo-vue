@@ -1,6 +1,6 @@
 <template>
-    <div class="body" >
-        <ToDoCard
+    <div class="todo-list">
+        <ToDoItem
           v-for="todo in todos"
           v-bind:key="todo.id"
           :todo="todo"
@@ -9,24 +9,26 @@
 </template>
 
 <script>
-import ToDoCard from '../molecules/ToDoCard.vue'
+import ToDoItem from '../molecules/ToDoItem.vue'
 
 export default {
-  name: 'Body',
+  name: 'ToDoList',
   data: function () {
     return {
       todos: [
-        { item: 'aaraon' },
-        { item: 'bbron' }
+        { item: 'working on css. Sytling is an art!' },
+        { item: 'working on vue' }
       ]
     }
   },
   components: {
-    ToDoCard
+    ToDoItem
   }
 }
 </script>
 
-<style>
-
+<style scoped>
+  .todo-list{
+    font-size: 2vh;
+  }
 </style>
