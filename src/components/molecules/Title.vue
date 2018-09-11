@@ -1,8 +1,8 @@
 <template>
     <div>
-      <span id="message">{{messageOnLeft}}</span>
-      <image-button/>
-      <span id="message">{{messageOnRight}}</span>
+        <span id="message">{{messageOnLeft}}</span>
+        <image-button/>
+        <span id="message">{{messageOnRight}}</span>
     </div>
 </template>
 
@@ -26,10 +26,9 @@ export default {
 </script>
 
 <style>
-#message {
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 5px;
-  align-items: center;
-  font-size: 5vh;
-}
+    #message {
+        padding: 5px;
+        align-items: center;
+        font-size: 5vh;
+    }
 </style>
