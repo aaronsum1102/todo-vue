@@ -1,7 +1,7 @@
 <template>
     <div class="alert-message">
         <font-awesome-icon id="icon" icon="exclamation-triangle" />
-        <Message id="message" :message="message" />
+        <message id="message" :message="message" />
     </div>
 </template>
 

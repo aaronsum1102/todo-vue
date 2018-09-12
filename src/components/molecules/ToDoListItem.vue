@@ -1,15 +1,15 @@
 <template>
     <div class="todo-item">
         <input class="status" type="checkbox">
-        <ToDoMessage class="details" :message="description" />
+        <to-do-item-message class="details" :message="description" />
     </div>
 </template>
 
 <script>
-import ToDoMessage from '../atoms/TextMessage.vue'
+import ToDoItemMessage from '../atoms/TextMessage.vue'
 
 export default {
-  name: 'ToDoItem',
+  name: 'ToDoListItem',
   props: {
     description: {
       type: String,
@@ -17,7 +17,7 @@ export default {
     }
   },
   components: {
-    ToDoMessage
+    ToDoItemMessage
   }
 }
 </script>
@@ -34,13 +34,12 @@ export default {
     }
 
     .todo-item .status {
-        margin-left: 3%;
+        margin-left: 1%;
         align-self: center;
     }
 
     .todo-item .details {
         padding: 1%;
         flex: 1;
-        ;
     }
 </style>
