@@ -1,22 +1,19 @@
 <template>
     <div class="app">
-        <Header/>
-        <Body/>
-        <Summary/>
+        <Header class="header"/>
+        <Body class="body" />
     </div>
 </template>
 
 <script>
-import Header from './components/pages/Header.vue'
-import Body from './components/pages/Body.vue'
-import Summary from './components/atoms/SummaryMessage.vue'
+import Header from './components/views/Header.vue'
+import Body from './components/views/Body.vue'
 
 export default {
   name: 'app',
   components: {
     Header,
-    Body,
-    Summary
+    Body
   }
 }
 </script>
@@ -24,5 +21,17 @@ export default {
 <style>
     .app {
         font-family: Arial, Helvetica, sans-serif;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    .app .header {
+        font-size: 4vh;
+        color: #FFFFFF;
+        background-color: skyblue;
+    }
+
+    .app .body {
+        font-size: 1.5vh;
     }
 </style>

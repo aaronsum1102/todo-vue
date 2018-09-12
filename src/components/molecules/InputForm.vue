@@ -1,6 +1,6 @@
 <template>
     <div class="input-form">
-        <Input class="input" placeholder="write your new task here..." />
+        <base-input-text class="input" placeholder="write your new task here..." />
         <button class="button">
                     <font-awesome-icon id="icon" icon="plus"/> add
                 </button>
@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import InputText from '../atoms/InputText.vue'
+import BaseInputText from '../atoms/BaseInputText.vue'
 
 export default {
   name: 'InputForm',
   components: {
-    InputText
+    BaseInputText
   }
 }
 </script>
@@ -29,13 +29,13 @@ export default {
         border-radius: 5px;
         flex: 1;
         padding: 5px;
-        font-size: 2vh;
+        font-size: inherit;
     }
 
     .input-form .button {
         border: 2px solid;
         border-radius: 10px;
         margin-left: 1%;
-        font-size: 2vh;
+        font-size: inherit;
     }
 </style>

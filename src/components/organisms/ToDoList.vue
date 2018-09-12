@@ -1,11 +1,11 @@
 <template>
   <div class="todo-list">
-    <ToDoItem class="item" v-for="todo in todos" v-bind:key="todo.id" :todo="todo" :description="todo.item" />
+    <to-do-list-item class="item" v-for="todo in todos" v-bind:key="todo.id" :todo="todo" :description="todo.item" />
   </div>
 </template>
 
 <script>
-import ToDoItem from '../molecules/ToDoItem.vue'
+import ToDoListItem from '../molecules/ToDoListItem.vue'
 
 export default {
   name: 'ToDoList',
@@ -21,7 +21,7 @@ export default {
     }
   },
   components: {
-    ToDoItem
+    ToDoListItem
   }
 }
 </script>

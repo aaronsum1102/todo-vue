@@ -1,8 +1,8 @@
 <template>
   <div class="title">
-    <Message class="message" :message="messageOnLeft" />
+    <message class="message" :message="messageOnLeft" />
     <font-awesome-icon icon="list-ul" />
-    <Message class="message" :message="messageOnRight" />
+    <message class="message" :message="messageOnRight" />
   </div>
 </template>
 
