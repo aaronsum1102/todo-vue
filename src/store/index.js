@@ -27,13 +27,9 @@ const getters = {
 }
 
 const mutations = {
-  markAsDone (state, taskObject) {
+  setStatus (state, taskObject) {
     const status = taskObject.status
-    if (!status) {
-      state.todos[taskObject.id].status = true
-    } else {
-      state.todos[taskObject.id].status = false
-    }
+    state.todos[taskObject.id].status = !status
   }
 }
 

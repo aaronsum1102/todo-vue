@@ -1,27 +1,28 @@
 <template>
     <div class="todo-item">
-        <input class="status" type="checkbox" @click="$emit('markDone')" v-model="status" />
-        <to-do-item-message class="details" :message="description" />
+        <input class="status"
+          type="checkbox"
+          :checked="todoItem.status"
+          @change="setStatus(todoItem)"/>
+        <to-do-item-message class="details"
+          :message="todoItem.item" />
     </div>
 </template>
 
 <script>
 import ToDoItemMessage from '../atoms/TextMessage.vue'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'ToDoListItem',
-  props: {
-    description: {
-      type: String,
-      required: true
-    },
-    status: {
-      type: Boolean,
-      required: true
-    }
-  },
+  props: ['todoItem'],
   components: {
     ToDoItemMessage
+  },
+  methods: {
+    ...mapMutations([
+      'setStatus'
+    ])
   }
 }
 </script>

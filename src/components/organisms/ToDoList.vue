@@ -4,15 +4,13 @@
       v-for="todo in todos"
       v-bind:key="todo.id"
       :todo="todo"
-      :description="todo.item"
-      :status="todo.status"
-      v-on:markDone="markAsDone(todo)"/>
+      :todoItem="todo"/>
   </div>
 </template>
 
 <script>
 import ToDoListItem from '../molecules/ToDoListItem.vue'
-import { mapState, mapMutations } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   name: 'ToDoList',
@@ -22,11 +20,6 @@ export default {
   computed: {
     ...mapState([
       'todos'
-    ])
-  },
-  methods: {
-    ...mapMutations([
-      'markAsDone'
     ])
   }
 }
