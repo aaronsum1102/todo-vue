@@ -1,6 +1,6 @@
 <template>
   <p class="summary">
-    <span id="summary-title"><b>Summary</b></span><br/> Number of task to do: <strong>{{taskToDo}}</strong><br/> Number of task done: <strong>{{taksCompleted}}</strong>
+    <span id="summary-title"><b>Summary</b></span><br/> Number of task to do: <strong>{{taskToDo}}</strong><br/> Number of task done: <strong>{{taskCompleted}}</strong>
   </p>
 </template>
 
@@ -8,13 +8,13 @@
 export default {
   name: 'BaseSummaryMessage',
   props: {
-    taksCompleted: {
+    taskCompleted: {
       type: Number,
-      default: 0
+      defaultStatus: 0
     },
     taskToDo: {
       type: Number,
-      default: 0
+      defaultStatus: 0
     }
   }
 }

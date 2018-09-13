@@ -23,19 +23,19 @@ export default {
 </script>
 
 <style scoped>
-    .alert-message {
-        display: flex;
-        font-size: 2.5vh;
-        color: red;
-    }
+.alert-message {
+  display: flex;
+  font-size: 2.5vh;
+  color: red;
+}
 
-    .alert-message #icon {
-        margin-right: 1%;
-        align-self: center;
-    }
+.alert-message #icon {
+  margin-right: 1%;
+  align-self: center;
+}
 
-    .alert-message #classmessage {
-        flex: 1;
-    }
+.alert-message #classmessage {
+  flex: 1;
+}
 </style>
 git

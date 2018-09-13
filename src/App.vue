@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <Header class="header"/>
+        <Header class="header" />
         <Body class="body" />
     </div>
 </template>
@@ -19,19 +19,19 @@ export default {
 </script>
 
 <style>
-    .app {
-        font-family: Arial, Helvetica, sans-serif;
-        margin-left: 1%;
-        margin-right: 1%;
-    }
+.app {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 1%;
+  margin-right: 1%;
+}
 
-    .app .header {
-        font-size: 4vh;
-        color: #FFFFFF;
-        background-color: skyblue;
-    }
+.app .header {
+  font-size: 4vh;
+  color: #ffffff;
+  background-color: skyblue;
+}
 
-    .app .body {
-        font-size: 1.5vh;
-    }
+.app .body {
+  font-size: 1.5vh;
+}
 </style>

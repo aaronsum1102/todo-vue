@@ -25,13 +25,13 @@ export default {
 </script>
 
 <style scoped>
-  .title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .title .message {
-    padding: 5px;
-  }
+.title .message {
+  padding: 5px;
+}
 </style>

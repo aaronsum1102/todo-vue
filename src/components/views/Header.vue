@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-    .header {
-        padding: 5px;
-    }
+.header {
+  padding: 5px;
+}
 </style>
