@@ -1,8 +1,8 @@
 <template>
     <div class="input-form">
         <base-input-text class="input font-size" placeholder="write your new task here..." />
-        <button class="button">
-            <font-awesome-icon id="icon font-size" icon="plus" /> add
+        <button class="button font-size">
+            <font-awesome-icon icon="plus" /> add
         </button>
     </div>
 </template>

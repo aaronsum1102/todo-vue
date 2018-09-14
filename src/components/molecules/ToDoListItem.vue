@@ -5,7 +5,8 @@
           :checked="todoItem.status"
           @change="setStatus(todoItem)"/>
         <to-do-item-message class="details"
-          :message="todoItem.item" />
+          :message="todoItem.item"
+          v-bind:class="{done: todoItem.status}" />
     </div>
 </template>
 
@@ -46,5 +47,9 @@ export default {
 .todo-item .details {
   padding: 1%;
   flex: 1;
+}
+.done {
+  text-decoration: line-through;
+  color: grey;
 }
 </style>
