@@ -1,6 +1,7 @@
 <template>
     <div class="input-form">
-        <base-input-text class="input font-size" placeholder="write your new task here..." />
+        <base-input-text class="input font-size"
+          placeholder="write your new task here..." />
         <button class="button font-size">
             <font-awesome-icon icon="plus" /> add
         </button>
@@ -22,20 +23,17 @@ export default {
 .input-form {
   display: flex;
 }
-
 .font-size {
   font-size: 2vh;
 }
-
-.input-form .input {
+.input {
   border-color: grey;
   border: 2px solid;
   border-radius: 5px;
   flex: 1;
   padding: 5px;
 }
-
-.input-form .button {
+.button {
   border: 2px solid;
   border-radius: 10px;
   margin-left: 1%;

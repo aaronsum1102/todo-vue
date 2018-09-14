@@ -17,10 +17,8 @@ export default {
   components: {
     ToDoListItem
   },
-  computed: {
-    ...mapState([
-      'todos'
-    ])
-  }
+  computed: mapState([
+    'todos'
+  ])
 }
 </script>

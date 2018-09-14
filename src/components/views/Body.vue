@@ -1,7 +1,9 @@
 <template>
   <div class="body">
     <p>
-      <alert-message v-if="indicator.toDisplay" message="placeholder text..." />
+      <alert-message
+        v-if="indicator.toDisplay"
+        message="placeholder text..." />
     </p>
     <p>
       <input-form />
@@ -9,7 +11,9 @@
     <p>
       <to-do-list />
     </p>
-    <base-summary-message :task-to-do="taskToDo" :task-completed="taskCompleted" />
+    <base-summary-message
+      :task-to-do="taskToDo"
+      :task-completed="taskCompleted" />
   </div>
 </template>
 
@@ -22,7 +26,7 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'Body',
-  data: function () {
+  data () {
     return {
       indicator: {
         toDisplay: true
@@ -35,8 +39,9 @@ export default {
     AlertMessage,
     BaseSummaryMessage
   },
-  computed: {
-    ...mapGetters(['taskToDo', 'taskCompleted'])
-  }
+  computed: mapGetters([
+    'taskToDo',
+    'taskCompleted'
+  ])
 }
 </script>

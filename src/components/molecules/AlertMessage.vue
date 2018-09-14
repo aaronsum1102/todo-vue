@@ -1,7 +1,7 @@
 <template>
     <div class="alert-message">
-        <font-awesome-icon id="icon" icon="exclamation-triangle" />
-        <message id="message" :message="message" />
+        <font-awesome-icon class="icon" icon="exclamation-triangle" />
+        <message class="message" :message="message" />
     </div>
 </template>
 
@@ -28,14 +28,11 @@ export default {
   font-size: 2.5vh;
   color: red;
 }
-
-.alert-message #icon {
+.icon {
   margin-right: 1%;
   align-self: center;
 }
-
-.alert-message #classmessage {
+.message {
   flex: 1;
 }
 </style>
-git

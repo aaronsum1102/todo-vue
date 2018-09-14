@@ -24,14 +24,12 @@ export default {
   margin-left: 1%;
   margin-right: 1%;
 }
-
-.app .header {
+.header {
   font-size: 4vh;
   color: #ffffff;
   background-color: skyblue;
 }
-
-.app .body {
-  font-size: 1.5vh;
+.body {
+  font-size: 2vh;
 }
 </style>

@@ -6,7 +6,7 @@
           @change="setStatus(todoItem)"/>
         <to-do-item-message class="details"
           :message="todoItem.item"
-          v-bind:class="{done: todoItem.status}" />
+          :class="{done: todoItem.status}" />
     </div>
 </template>
 
@@ -16,15 +16,16 @@ import { mapMutations } from 'vuex'
 
 export default {
   name: 'ToDoListItem',
-  props: ['todoItem'],
+  props: [
+    'todoItem'
+  ],
   components: {
     ToDoItemMessage
   },
-  methods: {
-    ...mapMutations([
-      'setStatus'
-    ])
-  }
+  methods: mapMutations([
+    'setStatus'
+  ])
+
 }
 </script>
 
@@ -38,13 +39,11 @@ export default {
   vertical-align: middle;
   display: flex;
 }
-
-.todo-item .status {
+.status {
   margin-left: 1%;
   align-self: center;
 }
-
-.todo-item .details {
+.details {
   padding: 1%;
   flex: 1;
 }

@@ -1,6 +1,9 @@
 <template>
   <p class="summary">
-    <span id="summary-title"><b>Summary</b></span><br/> Number of task to do: <strong>{{taskToDo}}</strong><br/> Number of task done: <strong>{{taskCompleted}}</strong>
+    <span>
+      <b>Summary</b></span><br/>
+      Number of task to do: <strong>{{taskToDo}}</strong><br/>
+      Number of task done: <strong>{{taskCompleted}}</strong>
   </p>
 </template>
 

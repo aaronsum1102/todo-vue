@@ -1,8 +1,10 @@
 <template>
   <div class="title">
-    <message class="message" :message="messageOnLeft" />
+    <message class="message"
+      :message="messageOnLeft" />
     <font-awesome-icon icon="list-ul" />
-    <message class="message" :message="messageOnRight" />
+    <message class="message"
+      :message="messageOnRight" />
   </div>
 </template>
 
@@ -30,8 +32,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
-.title .message {
+.message {
   padding: 5px;
 }
 </style>
