@@ -12,7 +12,7 @@
 
 <script>
 import ToDoItemMessage from '../atoms/TextMessage.vue'
-import { mapMutations } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'ToDoListItem',
@@ -22,10 +22,9 @@ export default {
   components: {
     ToDoItemMessage
   },
-  methods: mapMutations([
+  methods: mapActions([
     'setStatus'
   ])
-
 }
 </script>
 

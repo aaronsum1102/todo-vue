@@ -10,6 +10,7 @@
 
 <script>
 import Message from '../atoms/TextMessage.vue'
+
 export default {
   name: 'Title',
   props: {

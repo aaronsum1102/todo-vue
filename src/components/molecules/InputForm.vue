@@ -2,7 +2,8 @@
     <div class="input-form">
         <base-input-text class="input font-size"
           placeholder="write your new task here..." />
-        <button class="button font-size">
+        <button class="button font-size"
+          @click= addTodo >
             <font-awesome-icon icon="plus" /> add
         </button>
     </div>
@@ -15,6 +16,12 @@ export default {
   name: 'InputForm',
   components: {
     BaseInputText
+  },
+  methods: {
+    addTodo () {
+      this.$store.commit('addTodo')
+      this.$store.commit('updateTodoForm', '')
+    }
   }
 }
 </script>
