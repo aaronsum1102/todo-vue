@@ -2,8 +2,8 @@
   <div class="body">
     <p>
       <alert-message
-        v-if="this.$store.state.alert.displayAlert"
-        :message="this.$store.state.alert.message" />
+        v-if="alert.displayAlert"
+        :message="alert.message" />
     </p>
     <p>
       <input-form />
@@ -24,7 +24,7 @@ import InputForm from '../molecules/InputForm.vue'
 import AlertMessage from '../molecules/AlertMessage.vue'
 import BaseSummaryMessage from '../atoms/BaseSummaryMessage.vue'
 import BaseButton from '../atoms/BaseButton.vue'
-import { mapGetters } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'Body',
@@ -35,15 +35,20 @@ export default {
     BaseSummaryMessage,
     BaseButton
   },
-  computed: mapGetters([
-    'taskToDo',
-    'taskCompleted'
-  ]),
+  computed: {
+    ...mapState('todoStore', [
+      'alert'
+    ]),
+    ...mapGetters('todoStore', [
+      'taskToDo',
+      'taskCompleted'
+    ])
+  },
   methods: {
     clearTodos () {
       const confirmation = confirm('Are you sure you want to clear all tasks? Tasks deleted can not be recover.')
       if (confirmation) {
-        this.$store.dispatch('clearTodos')
+        this.$store.dispatch('todoStore/clearTodos')
       }
     }
   }

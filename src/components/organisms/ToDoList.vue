@@ -3,7 +3,7 @@
     <to-do-list-item class="item"
       v-for="todo in todos"
       v-bind:key="todo.id"
-      :todo="todo"
+      :todo="todos"
       :todoItem="todo"/>
   </div>
 </template>
@@ -17,8 +17,8 @@ export default {
   components: {
     ToDoListItem
   },
-  computed: mapState([
-    'todos'
-  ])
+  computed: {
+    ...mapState('todoStore', ['todos'])
+  }
 }
 </script>

@@ -22,9 +22,11 @@ export default {
   components: {
     ToDoItemMessage
   },
-  methods: mapActions([
-    'setStatus'
-  ])
+  methods: {
+    ...mapActions('todoStore', [
+      'setStatus'
+    ])
+  }
 }
 </script>
 

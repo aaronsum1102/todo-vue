@@ -22,8 +22,8 @@ export default {
   },
   methods: {
     addTodo () {
-      this.$store.dispatch('addTodo')
-      this.$store.dispatch('updateTodoForm', '')
+      this.$store.dispatch('todoStore/addTodo')
+      this.$store.dispatch('todoStore/updateTodoForm', '')
     }
   }
 }
