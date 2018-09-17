@@ -14,13 +14,16 @@ import BaseInputText from '../atoms/BaseInputText.vue'
 
 export default {
   name: 'InputForm',
+  state: {
+    number: 0
+  },
   components: {
     BaseInputText
   },
   methods: {
     addTodo () {
-      this.$store.commit('addTodo')
-      this.$store.commit('updateTodoForm', '')
+      this.$store.dispatch('addTodo')
+      this.$store.dispatch('updateTodoForm', '')
     }
   }
 }
@@ -46,3 +49,4 @@ export default {
   margin-left: 1%;
 }
 </style>
+v:on

@@ -2,8 +2,8 @@
   <div class="body">
     <p>
       <alert-message
-        v-if="indicator.toDisplay"
-        message="placeholder text..." />
+        v-if="this.$store.state.alert.displayAlert"
+        :message="this.$store.state.alert.message" />
     </p>
     <p>
       <input-form />
@@ -26,13 +26,6 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'Body',
-  data () {
-    return {
-      indicator: {
-        toDisplay: true
-      }
-    }
-  },
   components: {
     ToDoList,
     InputForm,

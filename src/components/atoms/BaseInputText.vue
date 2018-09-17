@@ -8,10 +8,10 @@ export default {
   computed: {
     instanceValue: {
       get () {
-        return this.$store.state.todoForm.description
+        return this.$store.state.todoForm
       },
       set (value) {
-        this.$store.commit('updateTodoForm', value)
+        this.$store.dispatch('updateTodoForm', value)
       }
     }
   }

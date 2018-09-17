@@ -7,6 +7,14 @@ const getNextTaskNumber = todos => {
   return todos.length
 }
 
+const isEmptyString = (value) => {
+  if (value === '') {
+    return true
+  } else {
+    return false
+  }
+}
+
 const state = {
   todos: [
     { id: 0,
@@ -19,9 +27,12 @@ const state = {
       item: 'working on vuex',
       status: false }
   ],
-  todoForm: {
-    description: ''
+  todoForm: '',
+  alert: {
+    displayAlert: false,
+    message: 'Invalid input! Please check again.'
   }
+
 }
 
 const getters = {
@@ -39,20 +50,35 @@ const mutations = {
     state.todos[taskObject.id].status = !status
   },
   updateTodoForm (state, payload) {
-    state.todoForm.description = payload
+    state.todoForm = payload
   },
   addTodo (state) {
-    state.todos.push({
-      id: getNextTaskNumber(state.todos),
-      item: state.todoForm.description,
-      status: false
-    })
+    state.alert.displayAlert = isEmptyString(state.todoForm)
+    if (!state.alert.displayAlert) {
+      state.todos.push({
+        id: getNextTaskNumber(state.todos),
+        item: state.todoForm,
+        status: false
+      })
+    }
+  },
+  clearAlert (state) {
+    state.alert.displayAlert = false
   }
 }
 
 const actions = {
   setStatus (context, todo) {
     context.commit('setStatus', todo)
+  },
+  updateTodoForm (context, payload) {
+    context.commit('updateTodoForm', payload)
+  },
+  addTodo ({ commit }) {
+    commit('addTodo')
+    setTimeout(() => {
+      commit('clearAlert')
+    }, 2000)
   }
 }
 

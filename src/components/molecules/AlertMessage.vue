@@ -25,7 +25,7 @@ export default {
 <style scoped>
 .alert-message {
   display: flex;
-  font-size: 2.5vh;
+  font-size: 2vh;
   color: red;
 }
 .icon {
