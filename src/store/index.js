@@ -32,7 +32,6 @@ const state = {
     displayAlert: false,
     message: 'Invalid input! Please check again.'
   }
-
 }
 
 const getters = {
@@ -64,6 +63,9 @@ const mutations = {
   },
   clearAlert (state) {
     state.alert.displayAlert = false
+  },
+  clearTodos (state) {
+    state.todos = []
   }
 }
 
@@ -79,6 +81,9 @@ const actions = {
     setTimeout(() => {
       commit('clearAlert')
     }, 2000)
+  },
+  clearTodos ({ commit }) {
+    commit('clearTodos')
   }
 }
 
