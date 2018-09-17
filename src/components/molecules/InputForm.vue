@@ -1,7 +1,9 @@
 <template>
     <div class="input-form">
         <base-input-text class="input font-size"
-          placeholder="write your new task here..." />
+          placeholder="write your new task here..."
+          :value="todoForm"
+          @inputChanged="updataForm" />
         <button class="button font-size"
           @click= addTodo >
             <font-awesome-icon icon="plus" /> add
@@ -11,6 +13,7 @@
 
 <script>
 import BaseInputText from '../atoms/BaseInputText.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'InputForm',
@@ -20,7 +23,13 @@ export default {
   components: {
     BaseInputText
   },
+  computed: {
+    ...mapState('todoStore', ['todoForm'])
+  },
   methods: {
+    updataForm (payload) {
+      this.$store.dispatch('todoStore/updateTodoForm', payload)
+    },
     addTodo () {
       this.$store.dispatch('todoStore/addTodo')
       this.$store.dispatch('todoStore/updateTodoForm', '')

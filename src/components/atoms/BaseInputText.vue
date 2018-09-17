@@ -1,17 +1,20 @@
 <template>
-  <input type="text" v-model="instanceValue" />
+  <input type="value" v-model="text" />
 </template>
 
 <script>
 export default {
   name: 'InputText',
+  props: {
+    value: String
+  },
   computed: {
-    instanceValue: {
+    text: {
       get () {
-        return this.$store.state.todoStore.todoForm
+        return this.value
       },
       set (value) {
-        this.$store.dispatch('todoStore/updateTodoForm', value)
+        this.$emit('inputChanged', value)
       }
     }
   }
