@@ -1,5 +1,5 @@
 <template>
-  <div class="body">
+  <div class="todos-body">
     <p>
       <alert-message
         v-if="alert.displayAlert"
@@ -9,31 +9,37 @@
       <input-form />
     </p>
     <p>
-      <to-do-list />
+      <Todos :items="getTodos"/>
     </p>
-    <base-summary-message
-      :task-to-do="taskToDo"
-      :task-completed="taskCompleted" />
-    <base-button class="button" message="clear all tasks" @clicked="clearTodos" />
+    <Summary
+      :description="summrayDescription"
+      :value="taskToDo" />
+    <Button class="button" :displayIcon="displayIcon" iconName="trash" message="clear all tasks" @clicked="clearTodos" />
   </div>
 </template>
 
 <script>
-import ToDoList from '../organisms/ToDoList.vue'
+import Todos from '../organisms/ItemsList.vue'
 import InputForm from '../molecules/InputForm.vue'
 import AlertMessage from '../molecules/AlertMessage.vue'
-import BaseSummaryMessage from '../atoms/BaseSummaryMessage.vue'
-import BaseButton from '../atoms/BaseButton.vue'
+import Summary from '../atoms/BaseSummary.vue'
+import Button from '../atoms/BaseButton.vue'
 import { mapState, mapGetters } from 'vuex'
 
 export default {
-  name: 'Body',
+  name: 'TodosBody',
+  data: function () {
+    return {
+      summrayDescription: 'Total tasks to do',
+      displayIcon: true
+    }
+  },
   components: {
-    ToDoList,
+    Todos,
     InputForm,
     AlertMessage,
-    BaseSummaryMessage,
-    BaseButton
+    Summary,
+    Button
   },
   computed: {
     ...mapState('todoStore', [
@@ -41,7 +47,7 @@ export default {
     ]),
     ...mapGetters('todoStore', [
       'taskToDo',
-      'taskCompleted'
+      'getTodos'
     ])
   },
   methods: {
@@ -55,11 +61,13 @@ export default {
 }
 </script>
 
-<style button>
+<style scoped>
+.todos-body {
+  font-size: 2vh;
+}
 .button {
   border: 2px solid;
   border-radius: 10px;
-  margin-left: 1%;
   font-size: inherit
 }
 </style>

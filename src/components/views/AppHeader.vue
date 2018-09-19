@@ -8,7 +8,7 @@
 import AppTitle from '../molecules/AppTitle.vue'
 
 export default {
-  name: 'Header',
+  name: 'AppHeader',
   components: {
     AppTitle
   }

@@ -1,19 +1,20 @@
 <template>
     <div class="app">
         <Header class="header" />
-        <Body class="body" />
+        <router-view class="body"/>
+        <navigation class="footer"/>
     </div>
 </template>
 
 <script>
-import Header from './components/views/Header.vue'
-import Body from './components/views/Body.vue'
+import Header from './components/views/AppHeader.vue'
+import Navigation from './components/molecules/NavigationButtons.vue'
 
 export default {
   name: 'app',
   components: {
     Header,
-    Body
+    Navigation
   }
 }
 </script>
@@ -29,7 +30,16 @@ export default {
   color: #ffffff;
   background-color: skyblue;
 }
-.body {
-  font-size: 2vh;
+.body{
+  height: 100%;
+}
+.footer{
+  font-size: 2.5vh;
+  position: absolute;
+  bottom: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+  left:0;
+  right:0;
 }
 </style>

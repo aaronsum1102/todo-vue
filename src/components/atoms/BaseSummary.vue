@@ -2,20 +2,19 @@
   <p class="summary">
     <span>
       <b>Summary</b></span><br/>
-      Number of task to do: <strong>{{taskToDo}}</strong><br/>
-      Number of task done: <strong>{{taskCompleted}}</strong>
+      {{description}}: <strong>{{value}}</strong><br/>
   </p>
 </template>
 
 <script>
 export default {
-  name: 'BaseSummaryMessage',
+  name: 'BaseSummary',
   props: {
-    taskCompleted: {
-      type: Number,
-      defaultStatus: 0
+    description: {
+      type: String,
+      required: true
     },
-    taskToDo: {
+    value: {
       type: Number,
       defaultStatus: 0
     }

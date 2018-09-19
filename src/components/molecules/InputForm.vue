@@ -1,27 +1,33 @@
 <template>
     <div class="input-form">
-        <base-input-text class="input font-size"
+        <text-input class="input font-size"
           placeholder="write your new task here..."
           :value="todoForm"
           @inputChanged="updataForm" />
-        <button class="button font-size"
-          @click= addTodo >
-            <font-awesome-icon icon="plus" /> add
+        <Button class="button font-size"
+          @clicked= addTodo :displayIcon="displayIcon" icon-name="plus" message="add">
         </button>
     </div>
 </template>
 
 <script>
-import BaseInputText from '../atoms/BaseInputText.vue'
+import TextInput from '../atoms/BaseInputText.vue'
+import Button from '../atoms/BaseButton.vue'
 import { mapState } from 'vuex'
 
 export default {
   name: 'InputForm',
+  data: function () {
+    return {
+      displayIcon: true
+    }
+  },
   state: {
     number: 0
   },
   components: {
-    BaseInputText
+    TextInput,
+    Button
   },
   computed: {
     ...mapState('todoStore', ['todoForm'])
@@ -43,7 +49,7 @@ export default {
   display: flex;
 }
 .font-size {
-  font-size: 2vh;
+  font-size: inherit;
 }
 .input {
   border-color: grey;
@@ -58,4 +64,3 @@ export default {
   margin-left: 1%;
 }
 </style>
-v:on

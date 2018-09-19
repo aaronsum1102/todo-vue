@@ -2,11 +2,11 @@
     <div class="todo-item">
         <input class="status"
           type="checkbox"
-          :checked="todoItem.status"
-          @change="setStatus(todoItem)"/>
+          :checked="item.status"
+          @change="setStatus(item)"/>
         <to-do-item-message class="details"
-          :message="todoItem.item"
-          :class="{done: todoItem.status}" />
+          :message="item.description"
+          :class="{done: item.status}" />
     </div>
 </template>
 
@@ -15,9 +15,9 @@ import ToDoItemMessage from '../atoms/TextMessage.vue'
 import { mapActions } from 'vuex'
 
 export default {
-  name: 'ToDoListItem',
+  name: 'ItemsListItem',
   props: [
-    'todoItem'
+    'item'
   ],
   components: {
     ToDoItemMessage

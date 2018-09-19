@@ -13,13 +13,13 @@ const isEmptyString = (value) => {
 const state = {
   todos: [
     { id: 0,
-      item: 'working on css.',
+      description: 'working on css.',
       status: false },
     { id: 1,
-      item: 'working on vue',
+      description: 'working on vue',
       status: true },
     { id: 2,
-      item: 'working on vuex',
+      description: 'working on vuex',
       status: false }
   ],
   todoForm: '',
@@ -35,6 +35,12 @@ const getters = {
   },
   taskCompleted: state => {
     return state.todos.filter(todo => todo.status === true).length
+  },
+  getTodos: state => {
+    return state.todos.filter(todo => todo.status === false)
+  },
+  getDone: state => {
+    return state.todos.filter(todo => todo.status === true)
   }
 }
 
@@ -51,7 +57,7 @@ const mutations = {
     if (!state.alert.displayAlert) {
       state.todos.push({
         id: getNextTaskNumber(state.todos),
-        item: state.todoForm,
+        description: state.todoForm,
         status: false
       })
     }
