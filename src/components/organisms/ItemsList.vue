@@ -10,6 +10,15 @@
 
 <script>
 import ItemsListItem from '../molecules/ItemsListItem.vue'
+import { mapState } from 'vuex'
+
+const isTodo = item => {
+  if (!item.status) {
+    return 'todoList'
+  } else {
+    return 'done'
+  }
+}
 
 export default {
   name: 'ItemsList',
@@ -22,12 +31,18 @@ export default {
       required: true
     }
   },
+  computed: {
+    ...mapState('todoStore', [
+      'todos'
+    ])
+  },
   methods: {
     showTodo (id) {
       this.$router.push({
         name: 'todoItem',
         params: {
-          id: id
+          id: id,
+          name: isTodo(this.todos[id])
         }
       })
     }

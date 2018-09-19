@@ -4,7 +4,6 @@
     <p>
       <done-items :items="getDone"/>
     </p>
-    <router-view />
   </div>
 </template>
 
@@ -14,7 +13,7 @@ import Summary from '../atoms/BaseSummary.vue'
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'DoneView',
+  name: 'DonePage',
   data: function () {
     return {
       summaryDescription: 'Total tasks done',

@@ -2,9 +2,11 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../components/views/HomeBody.vue'
 import Main from '../components/views/MainBody.vue'
-import Todos from '../components/views/TodosView.vue'
-import Done from '../components/views/DoneView.vue'
-import TodoItemView from '../components/views/TodoItemView.vue'
+import Todos from '../components/pages/TodosPage.vue'
+import Done from '../components/pages/DonePage.vue'
+import TodoItemView from '../components/pages/TodoItemPage.vue'
+import Input from '../components/organisms/Input.vue'
+import Reset from '../components/molecules/ResetButton.vue'
 
 Vue.use(Router)
 
@@ -15,17 +17,25 @@ const routes = [
     component: Main,
     children: [
       {
-        path: '/main/todoList/',
+        path: '/todoList/',
         name: 'todos',
-        component: Todos
+        components: {
+          default: Todos,
+          input: Input,
+          reset: Reset
+        }
       },
       {
-        path: '/main/done',
+        path: '/done',
         name: 'done',
-        component: Done
+        components: {
+          default: Done,
+          input: Input,
+          reset: Reset
+        }
       },
       {
-        path: '/main/todoList/:id',
+        path: '/:name/:id',
         name: 'todoItem',
         component: TodoItemView,
         props: true

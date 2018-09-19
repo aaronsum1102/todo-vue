@@ -15,7 +15,7 @@ import Todos from '../organisms/ItemsList.vue'
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'TodosView',
+  name: 'TodosPage',
   components: {
     Summary,
     Todos
