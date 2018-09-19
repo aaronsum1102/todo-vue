@@ -21,6 +21,8 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 1%;
   margin-right: 1%;
+  max-width: 1000px;
+  margin: auto;
 }
 .header {
   position:sticky;
@@ -31,6 +33,6 @@ export default {
 }
 .body{
   margin-top: 2%;
-  font-size:2vh;
+  font-size:2.5vh;
 }
 </style>

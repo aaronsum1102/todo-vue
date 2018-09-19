@@ -4,6 +4,7 @@
     <p>
       <done-items :items="getDone"/>
     </p>
+    <router-view />
   </div>
 </template>
 

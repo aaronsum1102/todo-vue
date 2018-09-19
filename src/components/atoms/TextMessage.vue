@@ -1,5 +1,5 @@
 <template>
-    <div> {{message}}</div>
+    <div @click="$emit('clicked')"> {{message}}</div>
 </template>
 
 <script>

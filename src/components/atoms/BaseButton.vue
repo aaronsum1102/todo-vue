@@ -34,6 +34,7 @@ export default {
   border: 3px solid;
   border-radius: 10px;
   background: inherit;
+  cursor: pointer;
 }
 .button-icon{
   align-self:center;

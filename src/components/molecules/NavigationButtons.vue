@@ -45,6 +45,6 @@ export default {
   width: 100%;
 }
 .router-link-active{
-  background: blue;
+  background: skyblue;
 }
 </style>

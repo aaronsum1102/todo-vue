@@ -6,7 +6,8 @@
           @change="setStatus(item)"/>
         <to-do-item-message class="details"
           :message="item.description"
-          :class="{done: item.status}" />
+          :class="{done: item.status}"
+          @clicked="$emit('clicked', item.id)"/>
     </div>
 </template>
 

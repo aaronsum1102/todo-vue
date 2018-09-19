@@ -1,9 +1,10 @@
 <template>
   <div class="items-list">
-    <items-list-item class="item"
-      v-for="item in items"
-      v-bind:key="item.id"
-      :item="item"/>
+      <items-list-item class="item"
+        v-for="item in items"
+        v-bind:key="item.id"
+        :item="item"
+        @clicked="showTodo"/>
   </div>
 </template>
 
@@ -20,6 +21,22 @@ export default {
       type: Array,
       required: true
     }
+  },
+  methods: {
+    showTodo (id) {
+      this.$router.push({
+        name: 'todoItem',
+        params: {
+          id: id
+        }
+      })
+    }
   }
 }
 </script>
+
+<style scoped>
+.item{
+  cursor: pointer;
+}
+</style>

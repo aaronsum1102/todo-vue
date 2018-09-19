@@ -39,8 +39,9 @@ export default {
   text-align: center;
 }
 .button {
-  background: white;
-  color:skyblue;
+  padding: 10px;
+  background: skyblue;
+  color:white;
   cursor: pointer;
   font-size: inherit;
 }
