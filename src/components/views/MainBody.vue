@@ -1,5 +1,6 @@
 <template>
   <div class="todos-body">
+    <navigation class="navigation-bar"/>
     <p>
       <alert-message
         v-if="alert.displayAlert"
@@ -8,46 +9,36 @@
     <p>
       <input-form />
     </p>
-    <p>
-      <Todos :items="getTodos"/>
-    </p>
-    <Summary
-      :description="summrayDescription"
-      :value="taskToDo" />
+    <router-view />
     <Button class="button" :displayIcon="displayIcon" iconName="trash" message="clear all tasks" @clicked="clearTodos" />
   </div>
 </template>
 
 <script>
-import Todos from '../organisms/ItemsList.vue'
+
 import InputForm from '../molecules/InputForm.vue'
 import AlertMessage from '../molecules/AlertMessage.vue'
-import Summary from '../atoms/BaseSummary.vue'
+
 import Button from '../atoms/BaseButton.vue'
-import { mapState, mapGetters } from 'vuex'
+import Navigation from '../molecules/NavigationButtons.vue'
+import { mapState } from 'vuex'
 
 export default {
-  name: 'TodosBody',
+  name: 'MainBody',
   data: function () {
     return {
-      summrayDescription: 'Total tasks to do',
       displayIcon: true
     }
   },
   components: {
-    Todos,
     InputForm,
     AlertMessage,
-    Summary,
-    Button
+    Button,
+    Navigation
   },
   computed: {
     ...mapState('todoStore', [
       'alert'
-    ]),
-    ...mapGetters('todoStore', [
-      'taskToDo',
-      'getTodos'
     ])
   },
   methods: {
@@ -69,5 +60,9 @@ export default {
   border: 2px solid;
   border-radius: 10px;
   font-size: inherit
+}
+.navigation-bar{
+  margin-top: 1%;
+  font-size: 2.5vh;
 }
 </style>

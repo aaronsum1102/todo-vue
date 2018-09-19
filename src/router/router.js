@@ -1,18 +1,34 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Todos from '../components/views/TodosBody.vue'
-import Done from '../components/views/DoneBody.vue'
+import Home from '../components/views/HomeBody.vue'
+import Main from '../components/views/MainBody.vue'
+import Todos from '../components/views/TodoView.vue'
+import Done from '../components/views/DoneView.vue'
 
 Vue.use(Router)
 
 const routes = [
   {
     path: '/',
-    component: Todos
+    name: 'home',
+    component: Home
   },
   {
-    path: '/done',
-    component: Done
+    path: '/main',
+    name: 'main',
+    component: Main,
+    children: [
+      {
+        path: '/main/todoList',
+        name: 'todos',
+        component: Todos
+      },
+      {
+        path: '/done',
+        name: 'done',
+        component: Done
+      }
+    ]
   }
 ]
 

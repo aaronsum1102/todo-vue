@@ -31,6 +31,9 @@ export default {
   display:flex;
   justify-content: center;
   align-items: center;
+  border: 3px solid;
+  border-radius: 10px;
+  background: inherit;
 }
 .button-icon{
   align-self:center;

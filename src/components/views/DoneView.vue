@@ -1,9 +1,9 @@
 <template>
   <div class="done-items">
+    <Summary :description="summaryDescription" :value="taskCompleted" />
     <p>
       <done-items :items="getDone"/>
     </p>
-    <Summary :description="summaryDescription" :value="taskCompleted" />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ import Summary from '../atoms/BaseSummary.vue'
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'DoneBody',
+  name: 'DoneView',
   data: function () {
     return {
       summaryDescription: 'Total tasks done',

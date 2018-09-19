@@ -1,21 +1,25 @@
 <template>
   <div class="navigation-buttons">
-    <router-link to="/" class="container-size margin-right">
-      <Button class="button" :display-icon="displayIcon" message="Tasks to do"/>
+    <router-link :to="{name:'home'}" exact class="container">
+      <Button class="button" :display-icon="displayIcon" icon-name="home" message="Home" />
     </router-link>
-    <router-link to="/done" class="container-size margin-left">
-      <Button class="button" :display-icon="displayIcon" message="Tasks done" />
+    <router-link class="container" exact :to="{ name:'todos'}" >
+      <Button class="button" :display-icon="displayIcon" icon-name="briefcase" message="To do"/>
+    </router-link>
+    <router-link :to="{name:'done'}" exact class="container">
+      <Button class="button" :display-icon="displayIcon" icon-name="check-double" message="Done" />
     </router-link>
   </div>
 </template>
 
 <script>
 import Button from '../atoms/BaseButton.vue'
+
 export default {
   name: 'NavigationButton',
   data: function () {
     return {
-      displayIcon: false
+      displayIcon: true
     }
   },
   components: {
@@ -26,26 +30,21 @@ export default {
 
 <style scoped>
 .navigation-buttons{
-  padding:5px;
   display: flex;
-  background: skyblue;
+  align-items: center;
+  justify-content: space-between;
 }
-.margin-left{
-  margin-left: 5px;
-}
-.margin-right{
-  margin-right: 5px;
-}
-.container-size{
-  color: white;
-  border: 3px solid;
-  border-radius: 10px;
-  background: skyblue;
-  flex-grow: 1;
+.container{
+  text-decoration: none;
+  flex: 1 1 auto;
 }
 .button {
-  width: 100%;
   font-size: inherit;
   color:white;
+  background: skyblue;
+  width: 100%;
+}
+.router-link-active{
+  background: blue;
 }
 </style>
