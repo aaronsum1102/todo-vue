@@ -1,12 +1,13 @@
 <template>
-    <button class="button theme" @click="$emit('clicked')">
-        <font-awesome-icon class="button-icon theme" v-if="displayIcon" :icon="iconName" /> {{ message }}
-    </button>
+  <button class="button theme" @click="$emit('clicked')">
+    <font-awesome-icon class="button-icon theme" v-if="displayIcon" :icon="iconName"/>
+    {{ message }}
+  </button>
 </template>
 
 <script>
 export default {
-  name: 'BaseButton',
+  name: "BaseButton",
   props: {
     message: {
       type: String,
@@ -20,15 +21,15 @@ export default {
       default: false
     }
   }
-}
+};
 </script>
 
 <style scoped>
-.theme{
-  padding:5px;
+.theme {
+  padding: 5px;
 }
-.button{
-  display:flex;
+.button {
+  display: flex;
   justify-content: center;
   align-items: center;
   border: 3px solid;
@@ -36,7 +37,10 @@ export default {
   background: inherit;
   cursor: pointer;
 }
-.button-icon{
-  align-self:center;
+.button:focus {
+  outline: none;
+}
+.button-icon {
+  align-self: center;
 }
 </style>
